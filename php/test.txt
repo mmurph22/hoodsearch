@@ -1,0 +1,7 @@
+129.2.24.226:8080/mps/mmurph22/geog797/hoodsearch/scenario_set.php?userid=28&name=PopShopSearch&surveyid={b9667126-f170-47d2-855e-4ff216d3e6e7}&create_date=2019-10-11&update_date=2019-10-12&rating=3
+
+129.2.24.226:8080/mps/mmurph22/geog797/hoodsearch/scenario_get.php?scnid=1
+
+129.2.24.226:8080/mps/mmurph22/geog797/hoodsearch/scenario_get.php?surveyid={b9667126-f170-47d2-855e-4ff216d3e6e7}
+
+129.2.24.226:8080/mps/mmurph22/geog797/hoodsearch/scenarios_get.php?userid=32
