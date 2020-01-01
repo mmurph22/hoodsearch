@@ -1,0 +1,5 @@
+evalue_2015 = !value_2014! + ((!value_2011! - !value_2010!)/2)
+evalue_2016 = !evalue_2015! + ((!value_2012! - !value_2011!)/2)
+evalue_2017 = !evalue_2016! + ((!value_2013! - !value_2012!)/2)
+evalue_2018 = !evalue_2017! + ((!value_2014! - !value_2013!)/2)
+evalue_2019 = !evalue_2018! + ((!evalue_2015! - !value_2014!)/2)
