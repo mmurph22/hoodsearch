@@ -1,0 +1,110 @@
+<!--
+  Generated template for the NewcoordinatorPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-row header align-items-start align-items-stretch>
+    <ion-col col-12 col-md-6 offset-md-3 no-padding>
+      <img logo src="assets/imgs/ace_table_pan.png" />
+    </ion-col>
+  </ion-row>
+  <ion-navbar>
+    <ion-title>Register as Coordinator</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="formg">
+
+    <!-- Login Credentials -->
+    <div input-field>
+      <ion-row col-12 offset-4>
+        <ion-label no-margin no-padding>Enter New Login Credentials</ion-label>
+      </ion-row>
+      <!-- Input-field-text -->
+      <ion-item no-padding>
+        <ion-label no-margin >Enter Username</ion-label>
+        <ion-input formControlName="uname" type="text" [(ngModel)]="uname" [ngModelOptions]="{standalone: true}"></ion-input>  
+      </ion-item>
+        <!-- Input-field-password -->
+      <ion-item no-padding>
+        <ion-label no-margin >Enter Password</ion-label>
+        <ion-input formControlName="passwd" type="password" [(ngModel)]="passwd" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+    </div>
+    
+    <!-- Coordinator Venue Credentials -->
+    <div input-field>
+      <ion-row col-12 offset-4>
+        <ion-label no-margin no-padding>Enter Venue Information</ion-label>
+      </ion-row>
+      <ion-item no-padding>
+        <ion-label no-margin>Venue Name</ion-label>
+        <ion-input formControlName="vname" type="text" [(ngModel)]="vname" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+      <ion-item no-padding>
+        <ion-label no-margin>Venue Address</ion-label>
+        <ion-input formControlName="loc" type="text" [(ngModel)]="loc" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+    </div>
+  </form>
+  <ion-item no-padding>
+    <ion-label no-margin color="primary">Select location on the map</ion-label>
+  </ion-item>
+  <!--<div id="venuemap"></div>-->
+  <form [formGroup]="formg">
+    <div input-field>
+      <ion-row>
+        <ion-col col-6>
+            <div id="venuemap"></div>
+        </ion-col>
+        <ion-col col-6>
+          <ion-item no-padding>
+            <ion-label no-margin color="primary">Latitude</ion-label>
+            <ion-input formControlName="lat" type="number" [(ngModel)]="lat" [ngModelOptions]="{standalone: true}"></ion-input>
+          </ion-item>
+          <ion-item no-padding>
+            <ion-label no-margin color="primary">Longitude</ion-label>
+            <ion-input formControlName="lng" type="number"[(ngModel)]="lng" [ngModelOptions]="{standalone: true}"></ion-input>
+          </ion-item>
+          <ion-item><div></div></ion-item> <!--adding height to map-->  
+          <ion-item><div></div></ion-item> <!--adding height to map-->  
+          <ion-item><div></div></ion-item> <!--adding height to map-->  
+        </ion-col>     
+      </ion-row>
+
+
+
+
+
+      <!-- Coordinator Point of Contact Credentials -->
+      <ion-row col-12 offset-4>
+        <ion-label no-margin no-padding>Enter Point of Contact's Information</ion-label>
+      </ion-row>
+      <ion-item no-padding>
+        <ion-label no-margin >Enter First Name</ion-label>
+        <ion-input formControlName="fname" type="text" [(ngModel)]="fname" [ngModelOptions]="{standalone: true}"></ion-input>        
+      </ion-item>
+      <ion-item no-padding>
+          <ion-label no-margin >Enter Last Name</ion-label>
+          <ion-input formControlName="lname" type="text" [(ngModel)]="lname" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+      <ion-item no-padding>
+        <ion-label no-margin >Enter Email</ion-label>
+        <ion-input formControlName="email" type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+      <ion-item no-padding>
+        <ion-label no-margin >Enter Phone Number</ion-label>
+        <ion-input formControlName="phone" type="tel" [(ngModel)]="phone" [ngModelOptions]="{standalone: true}"></ion-input>
+      </ion-item>
+    </div>
+  </form>
+
+  <!-- Register button -->
+  <ion-col col-12 no-padding>
+    <button no-margin ion-button full text-uppercase (click)="onRegister()">Register</button>
+  </ion-col>
+</ion-content>

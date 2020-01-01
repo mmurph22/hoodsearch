@@ -1,0 +1,7 @@
+{
+  "name": "hoodsearch",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

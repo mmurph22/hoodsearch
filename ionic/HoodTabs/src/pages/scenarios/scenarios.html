@@ -1,0 +1,93 @@
+<!--
+  Generated template for the ScenariosPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-row header align-items-start align-items-stretch>
+    <ion-col col-12 col-md-6 offset-md-3>
+      <img logo src="https://render.fineartamerica.com/images/images-profile-flow/350/images/artworkimages/medium/1/midwinter-over-the-patapsco-ellicott-city-md-wiley-purkey.jpg" />
+    </ion-col>
+  </ion-row>
+  <ion-navbar>
+    <!--<ion-title>HoodSearch Surveys</ion-title>-->
+    <div class ="col-md-12 col-xs-12">
+        <ion-row><ion-title>HoodSearch Survey Discoveries</ion-title>
+          <img class="prodicon" src="https://image.flaticon.com/icons/png/512/1028/1028047.png" />
+        </ion-row>
+        <ion-row>
+          <ion-label text-wrap class="servace-badge">
+            Before you delve into the home buying process, consider this. What are the factors that are most impoprtant in your home purchase?
+            And which of these factors are not about the house...but the <i><b>neighborhood</b></i>? HoodSearch surveys are designed around 
+            key questions which will match you with our community database of compati neighborhoods. Let's delve... 
+          </ion-label>
+        </ion-row>		
+      </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div id="resultList" class ="col-md-12 col-xs-12">
+    <div class="table-hover">
+    <form padding [formGroup]="formg">  
+      <ion-list>
+        <ion-row>
+          <button ion-item *ngIf="scntable" >{{scntable?.length || '0'}} Surveys Found </button>
+        </ion-row>
+        <ion-row>
+        <!--
+        <ion-col col-1 text-wrap>
+          <thead>S123</thead>
+        </ion-col>
+        <ion-col col-1 text-wrap>
+          <thead>((SurveyID))</thead>
+        </ion-col>   -->     
+        <ion-col col-4 text-wrap>
+          <thead>Name</thead>
+        </ion-col>
+        <ion-col col-3 text-wrap>
+          <thead>Creation Date</thead>
+        </ion-col>
+        <ion-col col-3 text-wrap>
+          <thead>Last Edit Date</thead>
+        </ion-col>
+        <ion-col col-2 text-wrap>
+          <thead>Actions</thead>
+        </ion-col>        
+      </ion-row>
+      <!--<ion-button ion-item *ngFor="let event of scntable; let i=index" (click)="goToSurveyPage(i)">-->
+        <!-- show grid here -->
+        <ion-row *ngFor="let event of scntable; let i=index">
+          <!--<td>{{ event.s123id }}</td>--><!--<td>{{ event.surveyid }}</td>-->
+          <!--<ion-col col-1 text-wrap>
+            <td>{{ event.objectid }}</td>
+          </ion-col>
+          <ion-col col-1 text-wrap>
+            <td>{{ event.globalid }}</td>>
+          </ion-col>-->
+          <ion-col col-4 text-wrap>
+            <td><ion-label>{{ event.survey_name }}</ion-label></td><!--<td>{{ event.name }}</td>-->
+          </ion-col>
+          <ion-col col-3 text-wrap>
+            <!--<td><ion-label formControlName="CreationDate" readonly type="date" [(ngModel)]=event.CreationDate [ngModelOptions]="{standalone: true}"></ion-label></td>-->
+            <td><ion-label text-wrap type="date">{{ event.CreationDate }}</ion-label></td><!--<td>{{ event.create_date }}</td>-->
+          </ion-col>
+          <ion-col col-3 text-wrap>
+            <td><ion-label text-wrap type="datetime">{{ event.EditDate }}</ion-label></td><!--<td>{{ event.update_date }}</td>-->
+          </ion-col>
+          <ion-col col-2 text-wrap>
+            <ion-row>
+              <ion-button><ion-badge name="gosurvey" item-end float-right color="dark" (click)="goToSurveyPage(i)">Edit Surveys</ion-badge></ion-button>
+            </ion-row>
+            <ion-row>
+              <ion-button><ion-badge name="goresults" item-end float-right color="primary" (click)="executeResults(i)">Show Results</ion-badge></ion-button>
+            </ion-row>
+          </ion-col>          
+        </ion-row>
+      <!--</ion-button>-->
+    </ion-list> </form> 
+    </div>
+  </div>
+
+</ion-content>

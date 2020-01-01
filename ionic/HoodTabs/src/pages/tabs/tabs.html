@@ -1,0 +1,14 @@
+<!--<ion-label>Logged in: {{loginpublicname}}</ion-label>-->
+<ion-tabs>
+  <!--
+  <ion-tab [root]="tab1Root" tabTitle="About" tabIcon="information-circle"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="Profile" tabIcon="person"></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="Events" tabIcon="ribbon"></ion-tab>
+  <ion-tab [root]="tab4Root" tabTitle="Logout" tabIcon="log-out"></ion-tab>-->
+  
+  <ion-tab [root]="tab_config[0].root" [show]="btnsEnabled" tabTitle={{tab_config[0].tabTitle}} tabIcon={{tab_config[0].tabIcon}} ></ion-tab>
+  <ion-tab [root]="tab_config[1].root" [show]="btnsEnabled" tabTitle={{tab_config[1].tabTitle}} tabIcon={{tab_config[1].tabIcon}} ></ion-tab>
+  <ion-tab [root]="tab_config[2].root" [show]="btnsEnabled" tabTitle={{tab_config[2].tabTitle}} tabIcon={{tab_config[2].tabIcon}} ></ion-tab>
+  <ion-tab [root]="tab_config[3].root" [show]="btnsEnabled" tabTitle={{tab_config[3].tabTitle}} tabIcon={{tab_config[3].tabIcon}} (ionSelect)="configureBtns()" ></ion-tab>
+  <!--<ion-tab [root]="tab_config[4].root" [enabled]="btnsEnabled" tabTitle={{tab_config[4].tabTitle}} tabIcon={{tab_config[4].tabIcon}} ></ion-tab>-->
+</ion-tabs>

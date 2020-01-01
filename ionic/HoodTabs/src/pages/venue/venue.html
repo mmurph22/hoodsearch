@@ -1,0 +1,116 @@
+<!--
+  Generated template for the VenuePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-row header align-items-start align-items-stretch>
+    <ion-col col-12 col-md-6 offset-md-3>
+      <img logo src="assets/imgs/ace_table_pan.png" />
+    </ion-col>
+  </ion-row>
+  <ion-navbar>
+    <ion-title>Venue Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header text-center>
+      <ion-label no-margin text-center><ion-badge color="primary"><div class="servace-badge">{{venuename}}</div></ion-badge></ion-label>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-row>
+        <ion-col col-6>
+          <div id="venueprofilemap"></div>
+          <ion-item no-padding>
+            <ion-icon name="loc" item-start></ion-icon>
+            <ion-label no-margin>Lat|Lng: <ion-badge float-right color="secondary">{{latitude}} | {{longitude}}</ion-badge></ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col col-6>
+          <ion-item no-padding>
+            <ion-icon name="list" item-start></ion-icon>
+            <ion-label no-margin>Address: 
+            <ion-badge float-right color="secondary">{{address}}</ion-badge></ion-label>
+          </ion-item>
+          <ion-item no-padding>
+              <ion-icon name="person" item-start></ion-icon>
+              <ion-label no-margin no-padding>Point of Contact</ion-label>
+          </ion-item>
+          <ion-item no-padding>
+              
+              <ion-label no-margin>Name:
+              <ion-badge float-right color="secondary">{{pocname}}</ion-badge></ion-label>
+            </ion-item>
+          <ion-item no-padding>
+              
+              <ion-label no-margin>Email: 
+              <ion-badge float-right color="secondary">{{pocemail}}</ion-badge></ion-label>
+            </ion-item>
+          <ion-item no-padding>
+              
+              <ion-label no-margin>Phone: 
+              <ion-badge float-right color="secondary">{{pocphone}}</ion-badge></ion-label>
+            </ion-item>
+        </ion-col> 
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card-header>
+    <ion-label text-center><div class="servace-menu">Venue Event History</div></ion-label>
+  </ion-card-header>
+  <ion-card-content>
+    <div class="table-hover">
+    <ion-list inset>
+      <ion-row>
+        <ion-col col-2 text-wrap>
+          <thead>Event</thead>
+        </ion-col>
+        <ion-col col-3 text-wrap>
+          <thead>Description</thead>
+        </ion-col>
+        <ion-col col-1 text-wrap>
+          <thead>Start Date</thead>
+        </ion-col>
+        <ion-col col-1 text-wrap>
+          <thead>End Date</thead>
+        </ion-col>
+        <ion-col col-2 text-wrap>
+          <thead>Plan Staff</thead>
+        </ion-col>
+      </ion-row>
+      <ion-item ion-item *ngFor="let event of events; let i = index" (click)="goToRatingsPage(i)">
+        <ion-row>
+          <ion-col col-2 text-wrap>
+            <td>{{ event.event_name }}</td>
+          </ion-col>
+          <ion-col col-3 text-wrap>
+            <td>{{ event.event_description }}</td>
+          </ion-col>
+          <ion-col col-1 text-wrap>
+            <td>{{ event.startdate }}</td>
+          </ion-col>
+          <ion-col col-1 text-wrap>
+            <td>{{ event.enddate }}</td>
+          </ion-col>
+          <ion-col col-2 text-wrap>
+            <td>{{ event.numstaff }}</td>
+          </ion-col>
+          <ion-col col-3 text-wrap>
+              <!--<ion-badge text-wrap item-end float-right full *ngIf="event.vols_assigned; else coveredBlock">Rate Effort ({{ event.badgepoints_pp }} Pts)</ion-badge>-->
+              <button ion-button text-center block text-wrap *ngIf="event.vols_assigned; else coveredBlock">Rate Effort ({{ event.badgepoints_pp }} Pts)</button>
+              <ng-template  #coveredBlock>
+                <!--<ion-badge item-end float-right color="light">No Volunteers ({{ event.badgepoints_pp }} SP)</ion-badge>-->
+                <button ion-button text-center block text-wrap color="light">No Volunteers ({{ event.badgepoints_pp }} SP)</button>
+              </ng-template>
+            </ion-col>
+        </ion-row>
+      </ion-item>  
+    </ion-list></div>
+  </ion-card-content>
+
+</ion-content>

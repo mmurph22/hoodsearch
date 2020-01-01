@@ -1,0 +1,38 @@
+<!--
+  Generated template for the ResultsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-row header align-items-start align-items-stretch>
+  </ion-row>
+  <ion-navbar>
+    <ion-row><ion-title>HoodSearch Results - {{ surveytitle }}</ion-title>
+      <img class="prodicon" src="https://image.flaticon.com/icons/png/512/1028/1028047.png" />
+    </ion-row>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <!--<div>
+      <small><a href="http://arcg.is/114uTf" target="_blank">View larger map</a></small><br>
+    </div> -->
+    <div class="embed-container">
+      <!-- <iframe frameborder="0" scrolling="yes" marginheight="0" marginwidth="0" title="Ops Dashboard Survey Results" src="http://arcg.is/114uTf"></iframe> -->
+     <iframe class="iframe" frameborder="0" scrolling="yes" marginheight="0" marginwidth="0" title="Ops Dashboard Survey Results" [src]="getResultsUrl()"></iframe>
+
+
+
+      <!--<br>
+      <iframe width="500" height="400" 
+      frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
+      title="Foliage Drawing" 
+      src="//umdmpsgis.maps.arcgis.com/apps/Embed/index.html?webmap=d6c920d67418433287a8707240da3522&extent=-76.487,39.5335,-76.4846,39.5347&zoom=true&previewImage=false&scale=true&legendlayers=true&basemap_gallery=true&disable_scroll=false&theme=dark&marker=-76.485924;39.53406;;Home%20base%20for%20tree%20line%20and%20foliage%20collection;http%3A%2F%2Ficons.iconarchive.com%2Ficons%2Fpaomedia%2Fsmall-n-flat%2F1024%2Fhouse-icon.png;Home"></iframe>
+      -->
+
+
+    </div> 
+  </ion-card>
+</ion-content>
