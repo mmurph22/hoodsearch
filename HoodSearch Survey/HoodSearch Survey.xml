@@ -1,0 +1,318 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:esri="http://esri.com/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:odk="http://www.opendatakit.org/xforms" xmlns:orx="http://openrosa.org/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>HoodSearch Survey</h:title>
+    <model>
+      <instance>
+        <HoodSearch_Survey id="HoodSearch_Survey">
+          <local_demo>
+            <survey_name/>
+            <survey_userid>1</survey_userid>
+            <price_range>
+              <price_goal>200000</price_goal>
+              <price_high>25</price_high>
+              <price_low>50</price_low>
+              <pricet_high>${price_goal}</pricet_high>
+              <pricet_goal>${price_goal}</pricet_goal>
+              <pricet_low>${price_goal}</pricet_low>
+            </price_range>
+            <life_age>
+              <date_inhome>date(today() + 1)</date_inhome>
+              <living_time>5</living_time>
+              <future_age>
+                <date_outhome_calc>date(decimal-date-time(${date_inhome}) + (365*(${living_time})))</date_outhome_calc>
+                <res_list jr:template="">
+                  <res_age/>
+                </res_list>
+              </future_age>
+            </life_age>
+          </local_demo>
+          <prox_demo>
+            <pop_density/>
+            <commute_loc>39.533417 -76.347715</commute_loc>
+            <prox_group>
+              <prox_parks/>
+              <prox_shop/>
+              <prox_util/>
+            </prox_group>
+          </prox_demo>
+          <main_ranking>
+            <rank_group>
+              <r_message/>
+              <r_price>0</r_price>
+              <r_comm>0</r_comm>
+              <r_schE>0</r_schE>
+              <r_schM>0</r_schM>
+              <r_schH>0</r_schH>
+              <r_density>0</r_density>
+              <r_utility>0</r_utility>
+              <r_shop>0</r_shop>
+              <r_parks>0</r_parks>
+            </rank_group>
+          </main_ranking>
+          <meta>
+            <instanceID/>
+          </meta>
+        </HoodSearch_Survey>
+      </instance>
+      <bind nodeset="/HoodSearch_Survey/local_demo/survey_name" required="true()" type="string"/>
+      <bind esri:fieldLength="32" esri:fieldType="esriFieldTypeInteger" nodeset="/HoodSearch_Survey/local_demo/survey_userid" readonly="true()" type="string"/>
+      <bind nodeset="/HoodSearch_Survey/local_demo/price_range/price_goal" required="true()" type="int"/>
+      <bind nodeset="/HoodSearch_Survey/local_demo/price_range/price_high" required="true()" type="int"/>
+      <bind nodeset="/HoodSearch_Survey/local_demo/price_range/price_low" required="true()" type="int"/>
+      <bind calculate=" /HoodSearch_Survey/local_demo/price_range/price_goal  + ( /HoodSearch_Survey/local_demo/price_range/price_goal * /HoodSearch_Survey/local_demo/price_range/price_high *0.01)" nodeset="/HoodSearch_Survey/local_demo/price_range/pricet_high" readonly="true()" type="string"/>
+      <bind calculate=" /HoodSearch_Survey/local_demo/price_range/price_goal " nodeset="/HoodSearch_Survey/local_demo/price_range/pricet_goal" readonly="true()" type="string"/>
+      <bind calculate=" /HoodSearch_Survey/local_demo/price_range/price_goal  - ( /HoodSearch_Survey/local_demo/price_range/price_goal * /HoodSearch_Survey/local_demo/price_range/price_low *0.01)" nodeset="/HoodSearch_Survey/local_demo/price_range/pricet_low" readonly="true()" type="string"/>
+      <bind constraint=".&gt;today()" nodeset="/HoodSearch_Survey/local_demo/life_age/date_inhome" type="date"/>
+      <bind nodeset="/HoodSearch_Survey/local_demo/life_age/living_time" type="int"/>
+      <bind calculate="date(decimal-date-time( /HoodSearch_Survey/local_demo/life_age/date_inhome ) + (365*( /HoodSearch_Survey/local_demo/life_age/living_time )))" nodeset="/HoodSearch_Survey/local_demo/life_age/future_age/date_outhome_calc" readonly="true()" type="date"/>
+      <bind constraint=".&gt;0" nodeset="/HoodSearch_Survey/local_demo/life_age/future_age/res_list/res_age" type="int"/>
+      <bind nodeset="/HoodSearch_Survey/prox_demo/pop_density" required="true()" type="select1"/>
+      <bind nodeset="/HoodSearch_Survey/prox_demo/commute_loc" type="geopoint"/>
+      <bind nodeset="/HoodSearch_Survey/prox_demo/prox_group/prox_parks" required="true()" type="select1"/>
+      <bind nodeset="/HoodSearch_Survey/prox_demo/prox_group/prox_shop" required="true()" type="select1"/>
+      <bind nodeset="/HoodSearch_Survey/prox_demo/prox_group/prox_util" required="true()" type="select1"/>
+      <bind nodeset="/HoodSearch_Survey/main_ranking/rank_group/r_message" readonly="true()" type="string"/>
+      <bind nodeset="/HoodSearch_Survey/main_ranking/rank_group/r_price" type="decimal"/>
+      <bind nodeset="/HoodSearch_Survey/main_ranking/rank_group/r_comm" type="decimal"/>
+      <bind nodeset="/HoodSearch_Survey/main_ranking/rank_group/r_schE" type="decimal"/>
+      <bind nodeset="/HoodSearch_Survey/main_ranking/rank_group/r_schM" type="decimal"/>
+      <bind nodeset="/HoodSearch_Survey/main_ranking/rank_group/r_schH" type="decimal"/>
+      <bind nodeset="/HoodSearch_Survey/main_ranking/rank_group/r_density" type="decimal"/>
+      <bind nodeset="/HoodSearch_Survey/main_ranking/rank_group/r_utility" type="decimal"/>
+      <bind nodeset="/HoodSearch_Survey/main_ranking/rank_group/r_shop" type="decimal"/>
+      <bind nodeset="/HoodSearch_Survey/main_ranking/rank_group/r_parks" type="decimal"/>
+      <bind calculate="concat('uuid:', uuid())" nodeset="/HoodSearch_Survey/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body class="pages">
+    <group appearance="field-list" ref="/HoodSearch_Survey/local_demo">
+      <label>Your Demographics</label>
+      <input ref="/HoodSearch_Survey/local_demo/survey_name">
+        <label>&lt;b&gt;Enter a Unique Name for This Survey&lt;/b&gt;</label>
+      </input>
+      <group ref="/HoodSearch_Survey/local_demo/price_range">
+        <label>Your Price Range</label>
+        <input appearance="numbers" ref="/HoodSearch_Survey/local_demo/price_range/price_goal">
+          <label>Preferred Price</label>
+          <hint>(in $) This is the price point you are targeting.</hint>
+        </input>
+        <range appearance="no-ticks" end="100" ref="/HoodSearch_Survey/local_demo/price_range/price_high" start="0" step="5">
+          <label>Absolute Highest Markup of Perferred Price (in % of Perferred Price)</label>
+          <hint>How far above your Preferred Price are you willing to go?</hint>
+        </range>
+        <range appearance="no-ticks" end="100" ref="/HoodSearch_Survey/local_demo/price_range/price_low" start="0" step="5">
+          <label>Absolute Lowest Markdown of Perferred Price (in % of Perferred Price)</label>
+          <hint>How far below your Perferred Price is relevant?</hint>
+        </range>
+        <input esri:inputMask="$000,000" ref="/HoodSearch_Survey/local_demo/price_range/pricet_high">
+          <label>Highest Price</label>
+        </input>
+        <input esri:inputMask="$000,000" ref="/HoodSearch_Survey/local_demo/price_range/pricet_goal">
+          <label>Target Price</label>
+        </input>
+        <input esri:inputMask="$000,000" ref="/HoodSearch_Survey/local_demo/price_range/pricet_low">
+          <label>Lowest Price</label>
+        </input>
+      </group>
+      <group ref="/HoodSearch_Survey/local_demo/life_age">
+        <label>Living Ages</label>
+        <input ref="/HoodSearch_Survey/local_demo/life_age/date_inhome">
+          <label>Roughly when do you plan to move?</label>
+        </input>
+        <input appearance="spinner" ref="/HoodSearch_Survey/local_demo/life_age/living_time">
+          <label>About how many years do you plan to live in your new home?</label>
+        </input>
+        <group ref="/HoodSearch_Survey/local_demo/life_age/future_age">
+          <label>… In the Future</label>
+          <input ref="/HoodSearch_Survey/local_demo/life_age/future_age/date_outhome_calc">
+            <label>On this date, you may move again.</label>
+          </input>
+          <group ref="/HoodSearch_Survey/local_demo/life_age/future_age/res_list">
+            <label>List the ages of all residents on this future date</label>
+            <repeat appearance="minimal compact" nodeset="/HoodSearch_Survey/local_demo/life_age/future_age/res_list">
+              <input appearance="spinner" ref="/HoodSearch_Survey/local_demo/life_age/future_age/res_list/res_age">
+                <label>Age of Resident</label>
+                <hint>Enter the ages of residents. To add a resident, hit the lower "+"</hint>
+              </input>
+            </repeat>
+          </group>
+        </group>
+      </group>
+    </group>
+    <group appearance="field-list" ref="/HoodSearch_Survey/prox_demo">
+      <label>Enviromental Preferences</label>
+      <select1 appearance="likert" ref="/HoodSearch_Survey/prox_demo/pop_density">
+        <label>Desired Neighborhood Population Density</label>
+        <hint>State what type of living environment you prefer</hint>
+        <item>
+          <label>Rural</label>
+          <value>rural</value>
+        </item>
+        <item>
+          <label>Rural Dev</label>
+          <value>subrural</value>
+        </item>
+        <item>
+          <label>Village</label>
+          <value>village</value>
+        </item>
+        <item>
+          <label>Suburban</label>
+          <value>suburban</value>
+        </item>
+        <item>
+          <label>Town Dev</label>
+          <value>subintown</value>
+        </item>
+        <item>
+          <label>In Town</label>
+          <value>intown</value>
+        </item>
+        <item>
+          <label>Urban</label>
+          <value>urban</value>
+        </item>
+      </select1>
+      <input appearance="hide-input" ref="/HoodSearch_Survey/prox_demo/commute_loc">
+        <label>Commuting Location</label>
+        <hint>Select a location you plan to commute to</hint>
+      </input>
+      <group ref="/HoodSearch_Survey/prox_demo/prox_group">
+        <label>Proximity Preferences</label>
+        <select1 appearance="likert" ref="/HoodSearch_Survey/prox_demo/prox_group/prox_parks">
+          <label>Desired Distance to Parks</label>
+          <hint>How Close would you prefer to live near parks, recreation, or greenspace?</hint>
+          <item>
+            <label>In View</label>
+            <value>local</value>
+          </item>
+          <item>
+            <label>Walk</label>
+            <value>walk</value>
+          </item>
+          <item>
+            <label>1 Mile</label>
+            <value>one_mile</value>
+          </item>
+          <item>
+            <label>3 Mile</label>
+            <value>three_mile</value>
+          </item>
+          <item>
+            <label>Township</label>
+            <value>area</value>
+          </item>
+          <item>
+            <label>Region</label>
+            <value>far</value>
+          </item>
+          <item>
+            <label>County +</label>
+            <value>remote</value>
+          </item>
+        </select1>
+        <select1 appearance="likert" ref="/HoodSearch_Survey/prox_demo/prox_group/prox_shop">
+          <label>Desired Distance to Shopping</label>
+          <hint>How Close would you prefer to live near shopping areas?</hint>
+          <item>
+            <label>In View</label>
+            <value>local</value>
+          </item>
+          <item>
+            <label>Walk</label>
+            <value>walk</value>
+          </item>
+          <item>
+            <label>1 Mile</label>
+            <value>one_mile</value>
+          </item>
+          <item>
+            <label>3 Mile</label>
+            <value>three_mile</value>
+          </item>
+          <item>
+            <label>Township</label>
+            <value>area</value>
+          </item>
+          <item>
+            <label>Region</label>
+            <value>far</value>
+          </item>
+          <item>
+            <label>County +</label>
+            <value>remote</value>
+          </item>
+        </select1>
+        <select1 appearance="likert" ref="/HoodSearch_Survey/prox_demo/prox_group/prox_util">
+          <label>Desired Distance away from Utilities</label>
+          <hint>How far away from utility facilities, such aswater/sewer plants do you prefer to be?</hint>
+          <item>
+            <label>In View</label>
+            <value>local</value>
+          </item>
+          <item>
+            <label>Walk</label>
+            <value>walk</value>
+          </item>
+          <item>
+            <label>1 Mile</label>
+            <value>one_mile</value>
+          </item>
+          <item>
+            <label>3 Mile</label>
+            <value>three_mile</value>
+          </item>
+          <item>
+            <label>Township</label>
+            <value>area</value>
+          </item>
+          <item>
+            <label>Region</label>
+            <value>far</value>
+          </item>
+          <item>
+            <label>County +</label>
+            <value>remote</value>
+          </item>
+        </select1>
+      </group>
+    </group>
+    <group appearance="field-list" ref="/HoodSearch_Survey/main_ranking">
+      <label>&lt;b&gt;Ranking of Preferences&lt;/b&gt;</label>
+      <group ref="/HoodSearch_Survey/main_ranking/rank_group">
+        <label>Importance</label>
+        <input ref="/HoodSearch_Survey/main_ranking/rank_group/r_message">
+          <label>&lt;i&gt;Given the preferences currently entered, please score in order of importance (0=not important; 10=critical)&lt;/i&gt;</label>
+        </input>
+        <range appearance="spinner" end="10" ref="/HoodSearch_Survey/main_ranking/rank_group/r_price" start="0" step="0.25">
+          <label>Preferred Home Price</label>
+        </range>
+        <range appearance="spinner" end="10" ref="/HoodSearch_Survey/main_ranking/rank_group/r_comm" start="0" step="0.25">
+          <label>Commute Time</label>
+        </range>
+        <range appearance="spinner" end="10" ref="/HoodSearch_Survey/main_ranking/rank_group/r_schE" start="0" step="0.25">
+          <label>Elementary School</label>
+        </range>
+        <range appearance="spinner" end="10" ref="/HoodSearch_Survey/main_ranking/rank_group/r_schM" start="0" step="0.25">
+          <label>Middle School</label>
+        </range>
+        <range appearance="spinner" end="10" ref="/HoodSearch_Survey/main_ranking/rank_group/r_schH" start="0" step="0.25">
+          <label>High School</label>
+        </range>
+        <range appearance="spinner" end="10" ref="/HoodSearch_Survey/main_ranking/rank_group/r_density" start="0" step="0.25">
+          <label>Rural to Urban Environ</label>
+        </range>
+        <range appearance="spinner" end="10" ref="/HoodSearch_Survey/main_ranking/rank_group/r_utility" start="0" step="0.25">
+          <label>Away from Utility Plants</label>
+        </range>
+        <range appearance="spinner" end="10" ref="/HoodSearch_Survey/main_ranking/rank_group/r_shop" start="0" step="0.25">
+          <label>Near Shopping Centers</label>
+        </range>
+        <range appearance="spinner" end="10" ref="/HoodSearch_Survey/main_ranking/rank_group/r_parks" start="0" step="0.25">
+          <label>Near Parks and Recreation</label>
+        </range>
+      </group>
+    </group>
+  </h:body>
+</h:html>

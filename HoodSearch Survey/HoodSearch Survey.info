@@ -1,0 +1,59 @@
+{
+    "displayInfo": {
+        "map": {
+            "defaultType": {
+            },
+            "home": {
+                "latitude": -37.830643,
+                "longitude": 144.96552,
+                "zoomLevel": 9
+            },
+            "preview": {
+            }
+        },
+        "style": {
+        }
+    },
+    "imagesInfo": {
+        "captureResolution": 640
+    },
+    "publishInfo": {
+        "connectVersion": "3.5.166",
+        "webFormTransform": true
+    },
+    "queryInfo": {
+        "applySpatialFilter": true,
+        "mode": "",
+        "where": ""
+    },
+    "sentInfo": {
+        "enabled": true
+    },
+    "webformInfo": {
+        "settings": {
+            "isVersionLocked": false,
+            "multiSubmissionInfo": {
+                "maxAllowed": 0,
+                "showSubmitAnotherTip": false
+            },
+            "notificationsInfo": {
+            },
+            "openStatusInfo": {
+                "closedStatusContent": "%3Cp%20style%3D%22text-align%3A%20center%3B%22%3E%3Cbr%3E%3C%2Fp%3E%3Cp%20style%3D%22text-align%3A%20center%3B%22%3E%3Cimg%20src%3D%22data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAADAAAABACAYAAABcIPRGAAAAAXNSR0IArs4c6QAAButJREFUaAXtWm1oHEUY3t27S6ukYBNFEosilVYs4scP6Q9D6qV%2FNJIo1fyQVrD5%2FmGjoEmUmMRatY2Ctv7It0IsFRKLbTEtYnIY64%2BCUhUpqCjSUltEcwqWau5yuz7PZCdutve1m9mgcAt7Mzsz7%2FM%2B7zvvzs7Mja4pvkZHR9ckk8lnAFtjWdYthNd1%2FQckxyKRyOv19fV%2FskzVpasCIs7w8HB0fn7%2BbWRvyoB7NhwO72xsbIxlqPdcbHiWyCBA8qlUagrVJH8SXq8xDKOcN%2FMsYx3bsC3ySi4lPcCwSSQS34ARyb%2FS0tLyAkibToYIJ2NgYOAllD2P%2B2xRUdHtKsIp7FTiN2%2FHvPA8yU9MTIRBdjfwHrcxx1DWzTqUV6Cswpbp8atTyqkKoVoCwuuv0fPxeHw3PN6Bu8y%2BO1jGOraxlTOsln0pMQAk15MJyH1hM5KedxIUZbINZMQI5WzgJ%2B8phIaGhu43TXMIytelU9bc3HwxXbmzjG36%2B%2FtZVIzUctbBuPN46ZtwnXCWZ8t76oFs5F1KxlzPfExXtqQZHUMdSwpzPCyOQhDW8YI1wAv1yG%2BCXHEmWbSpxgt5PFP9%2BPh4EWMe9TKUxkpKSrrr6uoSmWQGBwerQf7DTPUovwS9Z8BtFLpHkBe9JwyAcBmED6JRNAvAYlVra%2Bui4YuFCjLukMoCGUOobWc4hm3PC%2FKw6jyE2pF%2Bki6ePSjIojt3VToH0cngugXSfUijdDjSrWG8mI0ojJI8PvN3NDQ0xHOrWPkWtkPfGxkZ%2BQjTla9pBLmzB%2BpJB13yLMk74xd1ZStPVdPcPQ3ncnST71Ec72o7ng%2BB304acBtJIp1hKj9CzP9XLtuR%2FBiSUidDHGXkvInfATHaOGJejBzokQdRNuk0QnpGps46lXn3OyBHKBDeAT2d5AoOVFlsuBXb1mpu8u52K%2Fns4FLu1sseyPtyeyZvwQAbXtEDAeoKBLpgQCBu9QBa6AEPzgqkaaEHAnGrB9BCD3hwViBNCz0QiFs9gBZ6wIOzAmla6IFA3OoBtNADHpwVSNP%2FfQ94WlKqcuFM53V3pazUQ5ZlVli6doOu6WKti32GC9gw%2FFnXjZMhPXSkcu%2BvXzp0dmE34or%2FE1a0B6baSx6Zbl%2F7bdJMnjYtsxubm%2FdplrYBGwnFvEUeZaxjG7alDI3Aevxl7JTc4zBIZFekB2a6rr85mUwc0ixzM3dkuQuIzdWjyE8WGaEf51fpF8gmPGeVJ8zUetRVo64WRm3EjtXEVMfaU5FI0WOVTU1fCdaOn8ANiD13TWUyOXcY3i0F9Qu6ofdE7656R6%2BbSDl4yOz3yPA%2BYY0%2F2hY7Pf2EZVovYgdrMzA%2BB9a26Kt%2FiA04OOEcDLwx0BAieSulfUzyiPNjq0tDt1btjY9kIC%2BNECnbsC1lKEsMYhHTbshNLjMwAxg2pqkdRihEsPF6IHp128P3dvzm%2BU9uylAWHn%2BLWMQkNv4j%2BBQG9AVmwELML3i%2BavWup%2FXeXtP2nOeEstGr2p6SPSGwgYKXujsQA8TIgbhlzK8qDW1fDnlpLTGIRUy%2BE9SBLcdkIAbomrWHivnC%2BgkbSdqdEouYAtvWodwAfqTwQdrIoZKjjZvEcp%2FFCAZs6qAu5QbwC7vgIe1oPqONV4OIyW8I5ahLuQGcHhAcI8aS%2FxZYpuqS2NSl3gDMbUiUX1hVhN04EpvzKOVfYk7MEJ%2BanB5I5ZjXTKL8AfnsJQXm8aq%2B36uljMC%2BjEECupT3gFSiMoWnETVpLnhEeQ8AkxOzDZyYIeW8RlxOD8oyvymxOZGydOui8h7gfJ7EOKv0SzCXnMSmLvUGYDFCApwS5yLit15ic%2BGj3ACupEgMQVuLKXHIL8lMcsQkNuupS7kBXAZidPgOc%2FV1nM9nIuK3XKwRgE0d1KXcABKzNL1LpFiMfLbv2jV%2BybrliCUWOA4d6QwQyzv%2BO%2B4GyPd5a1%2F8fawbT8GU8rnZ1EGrtzednnzhRDtiEIuYxBY6UMNh9BLuYh5n4V%2F4mIS9i%2B7v4OEj%2B%2B98AeDhp4sLcK5huQwEVs303wfeAAHfawKSj%2F21%2F00M0TUYHWaJLfkYIHyGD1C0hSlPVqFsH%2B6c59%2FY3n1BrgfHYO6s3PPLT4ahbcOIkdRMc1fs8v4P%2FIQTZSgLfk8Si5jElnp1eL4J3h6E4kDOC3ENy2UgXox8FvWSl8bRZnFRL8JGmyV5uaiXDXVYxrNyPDIsDj0hzXhiSwp5Tf%2FdVuEqDd8IOAvezGdbZeF0JGJebKs4PC85AEfTGP9ezsxJ4VwpiJ5Dmx32AlzjMpCrNcQy9ntyX2I4xogmX9h0EsIAVtg9kdepxXRAWcq4mO%2FjApxrWLbzubWYVsU%2FM2Rl86hTwI0AAAAASUVORK5CYII%3D%22%3E%3C%2Fp%3E%3Cp%20style%3D%22text-align%3A%20center%3B%22%3E%3Cbr%3E%3C%2Fp%3E%3Cp%20style%3D%22text-align%3A%20center%3B%22%3E%3Cstrong%20style%3D%22font-size%3A16px%3B%22%3EThis%20survey%20is%20currently%20closed.%20Thanks!%3C%2Fstrong%3E%3C%2Fp%3E",
+                "schedule": {
+                    "end": null,
+                    "start": null
+                },
+                "status": "open"
+            },
+            "recordStartEndTime": {
+                "fieldInfos": [
+                ],
+                "isEnabled": false
+            },
+            "thankYouScreenContent": ""
+        },
+        "themes": [
+        ]
+    }
+}

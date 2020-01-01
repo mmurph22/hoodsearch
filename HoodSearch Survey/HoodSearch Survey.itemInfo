@@ -1,0 +1,57 @@
+{
+    "access": "public",
+    "accessInformation": null,
+    "appCategories": [
+    ],
+    "avgRating": 0,
+    "banner": null,
+    "categories": [
+    ],
+    "commentsEnabled": true,
+    "created": 1570830998000,
+    "culture": "en-us",
+    "description": "This template includes all XLSForm features supported in Survey123 for ArcGIS.",
+    "documentation": null,
+    "extent": [
+    ],
+    "groupDesignations": null,
+    "guid": null,
+    "id": "de76d0709d19439e80e888af183aafa1",
+    "industries": [
+    ],
+    "itemControl": "admin",
+    "languages": [
+    ],
+    "largeThumbnail": null,
+    "licenseInfo": null,
+    "listed": false,
+    "modified": 1572395494000,
+    "name": "HoodSearch_Survey.zip",
+    "numComments": 0,
+    "numRatings": 0,
+    "numViews": 10,
+    "orgId": "njRHYVhl2CMXMsap",
+    "owner": "m.p.m_umdmpsgis",
+    "ownerFolder": "2472e064840046c8be04089172b0445c",
+    "properties": null,
+    "protected": false,
+    "proxyFilter": null,
+    "scoreCompleteness": 41,
+    "screenshots": [
+    ],
+    "size": 75007,
+    "snippet": null,
+    "spatialReference": null,
+    "tags": [
+    ],
+    "thumbnail": "thumbnail/HoodSearch_Survey.png",
+    "title": "HoodSearch Survey",
+    "type": "Form",
+    "typeKeywords": [
+        "Form",
+        "Survey123",
+        "Survey123 Connect",
+        "xForm"
+    ],
+    "url": null
+}

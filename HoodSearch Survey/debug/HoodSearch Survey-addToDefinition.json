@@ -1,0 +1,567 @@
+{
+    "layers": [
+        {
+            "adminLayerInfo": {
+                "geometryField": {
+                    "name": "commute_loc",
+                    "srid": 4326
+                }
+            },
+            "allowGeometryUpdates": true,
+            "capabilities": "Query,Editing,Create,Update,Delete",
+            "copyrightText": "",
+            "defaultVisibility": true,
+            "description": "",
+            "displayField": "objectid",
+            "drawingInfo": {
+                "labelingInfo": null,
+                "renderer": {
+                    "description": "Survey Data Locations",
+                    "label": "HoodSearch Survey",
+                    "symbol": {
+                        "angle": 0,
+                        "color": [
+                            255,
+                            0,
+                            0,
+                            255
+                        ],
+                        "outline": {
+                            "color": [
+                                255,
+                                255,
+                                0,
+                                255
+                            ],
+                            "width": 1
+                        },
+                        "size": 8,
+                        "style": "esriSMSCircle",
+                        "type": "esriSMS",
+                        "xoffset": 0,
+                        "yoffset": 0
+                    },
+                    "type": "simple"
+                },
+                "transparency": 0
+            },
+            "extent": {
+                "spatialReference": {
+                    "wkid": 4326
+                },
+                "type": "extent",
+                "xmax": 180,
+                "xmin": -180,
+                "ymax": 90,
+                "ymin": -90
+            },
+            "fields": [
+                {
+                    "alias": "ObjectID",
+                    "defaultValue": null,
+                    "domain": null,
+                    "editable": false,
+                    "name": "objectid",
+                    "nullable": false,
+                    "type": "esriFieldTypeOID"
+                },
+                {
+                    "alias": "GlobalID",
+                    "defaultValue": null,
+                    "domain": null,
+                    "editable": false,
+                    "length": 38,
+                    "name": "globalid",
+                    "nullable": false,
+                    "sqlType": "sqlTypeGUID",
+                    "type": "esriFieldTypeGlobalID"
+                },
+                {
+                    "alias": "Preferred Price",
+                    "domain": null,
+                    "editable": true,
+                    "length": 255,
+                    "name": "price_goal",
+                    "nullable": true,
+                    "type": "esriFieldTypeInteger",
+                    "visible": true
+                },
+                {
+                    "alias": "Absolute High Price",
+                    "domain": null,
+                    "editable": true,
+                    "length": 255,
+                    "name": "price_high",
+                    "nullable": true,
+                    "type": "esriFieldTypeInteger",
+                    "visible": true
+                },
+                {
+                    "alias": "Absolute Low Price",
+                    "domain": null,
+                    "editable": true,
+                    "length": 255,
+                    "name": "price_low",
+                    "nullable": true,
+                    "type": "esriFieldTypeInteger",
+                    "visible": true
+                },
+                {
+                    "alias": "Highest Price",
+                    "domain": null,
+                    "editable": true,
+                    "length": 255,
+                    "name": "pricet_high",
+                    "nullable": true,
+                    "type": "esriFieldTypeString",
+                    "visible": true
+                },
+                {
+                    "alias": "Target Price",
+                    "domain": null,
+                    "editable": true,
+                    "length": 255,
+                    "name": "pricet_goal",
+                    "nullable": true,
+                    "type": "esriFieldTypeString",
+                    "visible": true
+                },
+                {
+                    "alias": "Lowest Price",
+                    "domain": null,
+                    "editable": true,
+                    "length": 255,
+                    "name": "pricet_low",
+                    "nullable": true,
+                    "type": "esriFieldTypeString",
+                    "visible": true
+                },
+                {
+                    "alias": "Roughly when do you plan to move?",
+                    "domain": null,
+                    "editable": true,
+                    "length": 255,
+                    "name": "date_inhome",
+                    "nullable": true,
+                    "type": "esriFieldTypeDate",
+                    "visible": true
+                },
+                {
+                    "alias": "About how many years do you plan to live in your new home?",
+                    "domain": null,
+                    "editable": true,
+                    "length": 255,
+                    "name": "living_time",
+                    "nullable": true,
+                    "type": "esriFieldTypeInteger",
+                    "visible": true
+                },
+                {
+                    "alias": "On this date, you may move again.",
+                    "domain": null,
+                    "editable": true,
+                    "length": 255,
+                    "name": "date_outhome_calc",
+                    "nullable": true,
+                    "type": "esriFieldTypeDate",
+                    "visible": true
+                },
+                {
+                    "alias": "Desired Neighborhood Population Density",
+                    "domain": {
+                        "codedValues": [
+                            {
+                                "code": "rural",
+                                "name": "Rural"
+                            },
+                            {
+                                "code": "subrural",
+                                "name": "Rural Dev"
+                            },
+                            {
+                                "code": "suburban",
+                                "name": "Suburban"
+                            },
+                            {
+                                "code": "subintown",
+                                "name": "Town Dev"
+                            },
+                            {
+                                "code": "intown",
+                                "name": "In Town"
+                            },
+                            {
+                                "code": "urban",
+                                "name": "Urban"
+                            }
+                        ],
+                        "name": "cvd_pop_density",
+                        "type": "codedValue"
+                    },
+                    "editable": true,
+                    "length": 255,
+                    "name": "pop_density",
+                    "nullable": true,
+                    "type": "esriFieldTypeString",
+                    "visible": true
+                },
+                {
+                    "alias": "Desired Distance to Parks",
+                    "domain": {
+                        "codedValues": [
+                            {
+                                "code": "local",
+                                "name": "In View"
+                            },
+                            {
+                                "code": "walk",
+                                "name": "Walk"
+                            },
+                            {
+                                "code": "one_mile",
+                                "name": "1 Mile"
+                            },
+                            {
+                                "code": "three_mile",
+                                "name": "3 Mile"
+                            },
+                            {
+                                "code": "area",
+                                "name": "Township"
+                            },
+                            {
+                                "code": "far",
+                                "name": "Region"
+                            },
+                            {
+                                "code": "remote",
+                                "name": "County +"
+                            }
+                        ],
+                        "name": "cvd_prox_parks",
+                        "type": "codedValue"
+                    },
+                    "editable": true,
+                    "length": 255,
+                    "name": "prox_parks",
+                    "nullable": true,
+                    "type": "esriFieldTypeString",
+                    "visible": true
+                },
+                {
+                    "alias": "Desired Distance to Shopping",
+                    "domain": {
+                        "codedValues": [
+                            {
+                                "code": "local",
+                                "name": "In View"
+                            },
+                            {
+                                "code": "walk",
+                                "name": "Walk"
+                            },
+                            {
+                                "code": "one_mile",
+                                "name": "1 Mile"
+                            },
+                            {
+                                "code": "three_mile",
+                                "name": "3 Mile"
+                            },
+                            {
+                                "code": "area",
+                                "name": "Township"
+                            },
+                            {
+                                "code": "far",
+                                "name": "Region"
+                            },
+                            {
+                                "code": "remote",
+                                "name": "County +"
+                            }
+                        ],
+                        "name": "cvd_prox_shop",
+                        "type": "codedValue"
+                    },
+                    "editable": true,
+                    "length": 255,
+                    "name": "prox_shop",
+                    "nullable": true,
+                    "type": "esriFieldTypeString",
+                    "visible": true
+                },
+                {
+                    "alias": "Desired Distance away from Utilities",
+                    "domain": {
+                        "codedValues": [
+                            {
+                                "code": "local",
+                                "name": "In View"
+                            },
+                            {
+                                "code": "walk",
+                                "name": "Walk"
+                            },
+                            {
+                                "code": "one_mile",
+                                "name": "1 Mile"
+                            },
+                            {
+                                "code": "three_mile",
+                                "name": "3 Mile"
+                            },
+                            {
+                                "code": "area",
+                                "name": "Township"
+                            },
+                            {
+                                "code": "far",
+                                "name": "Region"
+                            },
+                            {
+                                "code": "remote",
+                                "name": "County +"
+                            }
+                        ],
+                        "name": "cvd_prox_util",
+                        "type": "codedValue"
+                    },
+                    "editable": true,
+                    "length": 255,
+                    "name": "prox_util",
+                    "nullable": true,
+                    "type": "esriFieldTypeString",
+                    "visible": true
+                },
+                {
+                    "alias": "Given the preferences currently entered, please score in order of importance (0=not important; 10=critical)",
+                    "domain": null,
+                    "editable": true,
+                    "length": 255,
+                    "name": "r_message",
+                    "nullable": true,
+                    "type": "esriFieldTypeString",
+                    "visible": true
+                },
+                {
+                    "alias": "Preferred Home Price",
+                    "domain": null,
+                    "editable": true,
+                    "length": 255,
+                    "name": "r_price",
+                    "nullable": true,
+                    "type": "esriFieldTypeDouble",
+                    "visible": true
+                },
+                {
+                    "alias": "Commute Time",
+                    "domain": null,
+                    "editable": true,
+                    "length": 255,
+                    "name": "r_comm",
+                    "nullable": true,
+                    "type": "esriFieldTypeDouble",
+                    "visible": true
+                },
+                {
+                    "alias": "Elementary School",
+                    "domain": null,
+                    "editable": true,
+                    "length": 255,
+                    "name": "r_schE",
+                    "nullable": true,
+                    "type": "esriFieldTypeDouble",
+                    "visible": true
+                },
+                {
+                    "alias": "Middle School",
+                    "domain": null,
+                    "editable": true,
+                    "length": 255,
+                    "name": "r_schM",
+                    "nullable": true,
+                    "type": "esriFieldTypeDouble",
+                    "visible": true
+                },
+                {
+                    "alias": "High School",
+                    "domain": null,
+                    "editable": true,
+                    "length": 255,
+                    "name": "r_schH",
+                    "nullable": true,
+                    "type": "esriFieldTypeDouble",
+                    "visible": true
+                },
+                {
+                    "alias": "Rural to Urban Environ",
+                    "domain": null,
+                    "editable": true,
+                    "length": 255,
+                    "name": "r_density",
+                    "nullable": true,
+                    "type": "esriFieldTypeDouble",
+                    "visible": true
+                },
+                {
+                    "alias": "Away from Utility Plants",
+                    "domain": null,
+                    "editable": true,
+                    "length": 255,
+                    "name": "r_utility",
+                    "nullable": true,
+                    "type": "esriFieldTypeDouble",
+                    "visible": true
+                },
+                {
+                    "alias": "Near Shopping Centers",
+                    "domain": null,
+                    "editable": true,
+                    "length": 255,
+                    "name": "r_shop",
+                    "nullable": true,
+                    "type": "esriFieldTypeDouble",
+                    "visible": true
+                },
+                {
+                    "alias": "Near Parks and Recreation",
+                    "domain": null,
+                    "editable": true,
+                    "length": 255,
+                    "name": "r_parks",
+                    "nullable": true,
+                    "type": "esriFieldTypeDouble",
+                    "visible": true
+                }
+            ],
+            "geometryType": "esriGeometryPoint",
+            "globalIdField": "globalid",
+            "hasAttachments": false,
+            "hasM": false,
+            "hasStaticData": false,
+            "hasZ": false,
+            "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+            "id": 0,
+            "indexes": [
+                {
+                    "description": "GlobalID index",
+                    "fields": "globalid",
+                    "isAscending": false,
+                    "isUnique": true,
+                    "name": "GlobalIDIndex"
+                }
+            ],
+            "isDataVersioned": false,
+            "maxRecordCount": 1000,
+            "maxScale": 0,
+            "minScale": 0,
+            "name": "HoodSearch_Survey",
+            "objectIdField": "objectid",
+            "relationships": [
+            ],
+            "supportedQueryFormats": "JSON",
+            "supportsAdvancedQueries": true,
+            "supportsRollbackOnFailureParameter": true,
+            "supportsStatistics": true,
+            "templates": [
+            ],
+            "type": "Feature Layer",
+            "typeIdField": "",
+            "types": [
+            ]
+        }
+    ],
+    "tables": [
+        {
+            "capabilities": "Create,Delete,Query,Update,Uploads,Editing",
+            "copyrightText": "",
+            "defaultVisibility": true,
+            "description": "",
+            "displayField": "objectid",
+            "editFieldsInfo": null,
+            "fields": [
+                {
+                    "alias": "ObjectID",
+                    "defaultValue": null,
+                    "domain": null,
+                    "editable": false,
+                    "name": "objectid",
+                    "nullable": false,
+                    "type": "esriFieldTypeOID"
+                },
+                {
+                    "alias": "GlobalID",
+                    "defaultValue": null,
+                    "domain": null,
+                    "editable": false,
+                    "length": 38,
+                    "name": "globalid",
+                    "nullable": false,
+                    "sqlType": "sqlTypeGUID",
+                    "type": "esriFieldTypeGlobalID"
+                },
+                {
+                    "alias": "Age of Resident",
+                    "domain": null,
+                    "editable": true,
+                    "length": 255,
+                    "name": "res_age",
+                    "nullable": true,
+                    "type": "esriFieldTypeInteger",
+                    "visible": true
+                },
+                {
+                    "alias": "ParentGlobalID",
+                    "defaultValue": null,
+                    "domain": null,
+                    "editable": true,
+                    "length": 38,
+                    "name": "parentglobalid",
+                    "nullable": true,
+                    "sqlType": "sqlTypeGUID",
+                    "type": "esriFieldTypeGUID"
+                }
+            ],
+            "globalIdField": "globalid",
+            "hasAttachments": false,
+            "htmlPopupType": "esriServerHTMLPopupTypeNone",
+            "id": 1,
+            "indexes": [
+                {
+                    "description": "GlobalID index",
+                    "fields": "globalid",
+                    "isAscending": false,
+                    "isUnique": true,
+                    "name": "GlobalIDIndex"
+                },
+                {
+                    "description": "Child Key Field index",
+                    "fields": "parentglobalid",
+                    "isAscending": false,
+                    "isUnique": false,
+                    "name": "ParentGlobalIDIndex"
+                }
+            ],
+            "isDataVersioned": false,
+            "maxRecordCount": 1000,
+            "name": "res_list",
+            "objectIdField": "objectid",
+            "ownershipBasedAccessControlForFeatures": null,
+            "relationships": [
+            ],
+            "supportedQueryFormats": "JSON, AMF",
+            "supportsAdvancedQueries": true,
+            "supportsRollbackOnFailureParameter": true,
+            "supportsStatistics": true,
+            "syncCanReturnChanges": false,
+            "templates": [
+            ],
+            "type": "Table",
+            "typeIdField": "",
+            "types": [
+            ],
+            "useStandardizedQueries": true
+        }
+    ]
+}
